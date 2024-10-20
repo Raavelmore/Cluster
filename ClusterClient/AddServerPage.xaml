@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClusterClient.AddServerPage">
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Entry Text="Имя комнаты" x:Name="RoomNameEntry"></Entry>
+            <Button Text="Создать комнату" Clicked="CreateRoom"></Button>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Entry Text="ID Сервера" x:Name="RoomIdEntry"></Entry>
+            <Button Text="Войти в комнату" Clicked="EnterRoom"></Button>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Button Text="Назад" Clicked="Back"></Button>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClusterClient.MainPage">
+    <Grid Margin="25" RowSpacing="25" ColumnSpacing="25">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" ColumnSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ScrollView Grid.Column="0">
+                    <VerticalStackLayout x:Name="RoomList" Spacing="25">
+                        <Button Text="+" Clicked="AddRoom"></Button>
+                    </VerticalStackLayout>
+                </ScrollView>
+            <ScrollView Grid.Column="1">
+                <VerticalStackLayout x:Name="ChatList" Grid.Column="1">
+                </VerticalStackLayout>
+            </ScrollView>
+            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label x:Name="UsernameLabel" Grid.Row="0" Grid.ColumnSpan="2" Text="Подключен как Username" HorizontalTextAlignment="Center"></Label>
+                <Label Grid.Row="1" Grid.Column="0" Text="Микрофон" HorizontalTextAlignment="Center"></Label>
+                <Switch x:Name="MicSwitch" IsToggled="True" Toggled="MicSwitchToggled" Grid.Row="1" Grid.Column="1" TranslationY="-10"></Switch>
+                <Label Grid.Row="2" Grid.Column="0" Text="Шумодав" HorizontalTextAlignment="Center"></Label>
+                <Slider x:Name="NoiseGateSlider" Value="20" Minimum="0" Maximum="50" ValueChanged="NoiseGateSliderValueChanged" Grid.Row="2" Grid.Column="1" TranslationY="-5"></Slider>
+                <Button x:Name="DisconnectBtn" Clicked="DisconnectButtonClicked" IsEnabled="False" Text="Отключиться" Grid.Row="3" Grid.ColumnSpan="2"></Button>
+            </Grid>
+        </Grid>
+        <ScrollView Grid.Column="1">
+            <VerticalStackLayout x:Name="TextChat">
+            </VerticalStackLayout>
+        </ScrollView>
+        <ScrollView Grid.Column="2">
+            <VerticalStackLayout x:Name="UserList">
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

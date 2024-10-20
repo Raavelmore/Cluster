@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClusterClient.ConnectionPage">
+    <AbsoluteLayout
+        Margin="25">
+        <VerticalStackLayout
+            AbsoluteLayout.LayoutBounds="0,0,500,500"
+            Padding="25"
+            Spacing="25">
+            <Label Text="Адрес сервера"></Label>
+            <Entry x:Name="IpEntry"></Entry>
+            <Label Text="Имя пользователя"></Label>
+            <Entry x:Name="UsernameEntry"></Entry>
+            <Label Text="Пароль"></Label>
+            <Entry x:Name="PasswordEntry"></Entry>
+            <Button x:Name="ConnectBtn" Pressed="ConnectBtnPressed" Text="В БОЙ!"></Button>
+        </VerticalStackLayout>
+    </AbsoluteLayout>
+</ContentPage>
